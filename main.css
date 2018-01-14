@@ -46,7 +46,8 @@ body {
   background-color: yellow;
 }
 
-.bpm-field, .volume-field {
+.bpm-field,
+.volume-field {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,6 +56,23 @@ body {
 .icon-button {
   background: none;
   border: 0;
+  transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+}
+
+.icon-button:focus {
+  background-color: black;
+  color: ghostwhite;
+}
+
+.icon-button::-moz-focus-inner {
+  border: 0;
+}
+
+.little-button {
+  width: 4em;
+  height: 4em;
+  border-radius: 4em;
+  margin: 0.2em;
 }
 
 .big-button {
