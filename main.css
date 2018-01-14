@@ -7,33 +7,25 @@ body {
   font-family: monospace;
   height: 100%;
   background-color: ghostwhite;
+  margin: 0;
 }
 
 .main {
   display: flex;
   align-items: center;
+  justify-content: center;
   height: 100%;
 }
 
 .metronome {
-  width: 20em;
   padding: 1em;
+  display: flex;
   text-align: center;
-  margin: 0 auto;
+  align-items: center;
 }
 
-.control-group:not(:last-child) {
-  margin-bottom: 1em;
-}
-
-.big-button {
-  font-size: 2em;
-  background-color: tomato;
-  border: 0;
-  width: 100%;
-  font-family: inherit;
-  padding-top: 0.25em;
-  padding-bottom: 0.25em;
+.control-group {
+  margin: 1em;
 }
 
 .field {
