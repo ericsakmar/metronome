@@ -37,6 +37,7 @@ body {
   font-family: inherit;
   padding-bottom: 0;
   display: block;
+  transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
 }
 
 .field-label {
@@ -44,7 +45,8 @@ body {
 }
 
 .field:focus {
-  background-color: yellow;
+  background-color: black;
+  color: ghostwhite;
 }
 
 .bpm-field,

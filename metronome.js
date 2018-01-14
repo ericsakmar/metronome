@@ -1,7 +1,7 @@
 var audioContext = null;
 var isPlaying = false;
 var tempo = 120.0;
-var volume = 1.0;
+var volume = 100;
 var nextNoteTime = 0.0;
 var timerWorker = null;
 
@@ -11,7 +11,7 @@ function nextNote() {
 
 function scheduleNote(time) {
   const gain = audioContext.createGain();
-  gain.gain.value = volume;
+  gain.gain.value = volume / 100;
 
   const osc = audioContext.createOscillator();
   osc.connect(gain);
@@ -56,13 +56,15 @@ function init() {
     tempoField = $('#tempo'),
     tempoUpButton = $('#tempo-up-button'),
     tempoDownButton = $('#tempo-down-button'),
-    volumeDisplay = $('#volume-display'),
+    volumeField = $('#volume'),
     volumeUpButton = $('#volume-up-button'),
     volumeDownButton = $('#volume-down-button'),
     startButton = $('#start-button'),
     stopButton = $('#stop-button');
 
+  volumeField.value = volume;
   tempoField.value = tempo;
+
   tempoField.addEventListener('change', e => {
     const newTempo = parseFloat(e.target.value);
     if (!isNaN(newTempo)) {
@@ -97,17 +99,30 @@ function init() {
     start();
   });
 
+  volumeField.addEventListener('change', e => {
+    setVolume(e.target.value);
+  });
+
   volumeUpButton.addEventListener('click', e => {
     e.preventDefault();
-    volume = Math.min(volume + 0.1, 1.0);
-    volumeDisplay.innerText = `${Math.round(volume * 100)}%`;
+    setVolume(volume + 5);
   });
 
   volumeDownButton.addEventListener('click', e => {
     e.preventDefault();
-    volume = Math.max(volume - 0.1, 0);
-    volumeDisplay.innerText = `${Math.round(volume * 100)}%`;
+    setVolume(volume - 5);
   });
+
+  function setVolume(rawVolume) {
+    let newVolume = parseFloat(rawVolume); 
+    if (!isNaN(newVolume)) {
+      newVolume = newVolume;
+      newVolume = Math.max(0, newVolume);
+      newVolume = Math.min(newVolume, 100);
+      volume = newVolume;
+    }
+    volumeField.value = Math.round(volume);
+  }
 }
 
 window.addEventListener('load', init);
