@@ -35,10 +35,8 @@ function start() {
   if (isPlaying) {
     nextNoteTime = audioContext.currentTime;
     timerWorker.postMessage('start');
-    return 'stop';
   } else {
     timerWorker.postMessage('stop');
-    return 'start';
   }
 }
 
@@ -57,7 +55,9 @@ function init() {
     tempoField = $('#tempo'),
     volumeDisplay = $('#volume-display'),
     volumeUpButton = $('#volume-up-button'),
-    volumeDownButton = $('#volume-down-button');
+    volumeDownButton = $('#volume-down-button'),
+    startButton = $('#start-button'),
+    stopButton = $('#stop-button');
 
   tempoField.value = tempo;
   tempoField.addEventListener('change', e => {
@@ -66,6 +66,20 @@ function init() {
       // TODO other checks
       tempo = newTempo;
     }
+  });
+
+  startButton.addEventListener('click', e => {
+    e.preventDefault();
+    startButton.classList.toggle('hidden');
+    stopButton.classList.toggle('hidden');
+    start();
+  });
+
+  stopButton.addEventListener('click', e => {
+    e.preventDefault();
+    startButton.classList.toggle('hidden');
+    stopButton.classList.toggle('hidden');
+    start();
   });
 
   volumeUpButton.addEventListener('click', e => {
