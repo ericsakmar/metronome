@@ -20,6 +20,7 @@ body {
 .metronome {
   padding: 1em;
   display: flex;
+  flex-direction: column;
   text-align: center;
   align-items: center;
 }
@@ -48,6 +49,7 @@ body {
 
 .bpm-field,
 .volume-field {
+  width: 10em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,4 +101,10 @@ body {
 #start-button svg {
   position: relative;
   left: 0.35em;
+}
+
+@media all and (min-width: 40em) {
+  .metronome {
+    flex-direction: row;
+  }
 }
