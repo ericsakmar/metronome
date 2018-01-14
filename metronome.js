@@ -65,19 +65,9 @@ function init() {
   volumeField.value = volume;
   tempoField.value = tempo;
 
-  tempoField.addEventListener('change', e => {
-    setTempo(e.target.value);
-  });
-
-  tempoUpButton.addEventListener('click', e => {
-    e.preventDefault();
-    setTempo(tempo + 5);
-  });
-
-  tempoDownButton.addEventListener('click', e => {
-    e.preventDefault();
-    setTempo(tempo - 5);
-  });
+  tempoField.addEventListener('change', e => setTempo(e.target.value));
+  tempoUpButton.addEventListener('click', e => setTempo(tempo + 5));
+  tempoDownButton.addEventListener('click', e => setTempo(tempo - 5));
 
   function setTempo(rawTempo) {
     let newTempo = parseFloat(rawTempo); 
@@ -90,33 +80,18 @@ function init() {
     tempoField.value = Math.round(tempo);
   }
 
-  startButton.addEventListener('click', e => {
-    e.preventDefault();
+  startButton.addEventListener('click', e => toggle());
+  stopButton.addEventListener('click', e => toggle()); 
+
+  function toggle() {
     startButton.classList.toggle('hidden');
     stopButton.classList.toggle('hidden');
     start();
-  });
+  };
 
-  stopButton.addEventListener('click', e => {
-    e.preventDefault();
-    startButton.classList.toggle('hidden');
-    stopButton.classList.toggle('hidden');
-    start();
-  });
-
-  volumeField.addEventListener('change', e => {
-    setVolume(e.target.value);
-  });
-
-  volumeUpButton.addEventListener('click', e => {
-    e.preventDefault();
-    setVolume(volume + 5);
-  });
-
-  volumeDownButton.addEventListener('click', e => {
-    e.preventDefault();
-    setVolume(volume - 5);
-  });
+  volumeField.addEventListener('change', e => setVolume(e.target.value));
+  volumeUpButton.addEventListener('click', e => setVolume(volume + 5));
+  volumeDownButton.addEventListener('click', e => setVolume(volume - 5));
 
   function setVolume(rawVolume) {
     let newVolume = parseFloat(rawVolume); 
