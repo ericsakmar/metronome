@@ -53,6 +53,8 @@ function init() {
 
   const $ = document.querySelector.bind(document),
     tempoField = $('#tempo'),
+    tempoUpButton = $('#tempo-up-button'),
+    tempoDownButton = $('#tempo-down-button'),
     volumeDisplay = $('#volume-display'),
     volumeUpButton = $('#volume-up-button'),
     volumeDownButton = $('#volume-down-button'),
@@ -66,6 +68,18 @@ function init() {
       // TODO other checks
       tempo = newTempo;
     }
+  });
+
+  tempoUpButton.addEventListener('click', e => {
+    // TODO check range
+    tempo++;
+    tempoField.value = tempo;
+  });
+
+  tempoDownButton.addEventListener('click', e => {
+    // TODO check range
+    tempo--;
+    tempoField.value = tempo;
   });
 
   startButton.addEventListener('click', e => {
