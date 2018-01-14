@@ -53,7 +53,12 @@ function init() {
   };
   timerWorker.postMessage({interval: 25.0});
 
-  const tempoField = document.querySelector('#tempo');
+  const $ = document.querySelector.bind(document),
+    tempoField = $('#tempo'),
+    volumeDisplay = $('#volume-display'),
+    volumeUpButton = $('#volume-up-button'),
+    volumeDownButton = $('#volume-down-button');
+
   tempoField.value = tempo;
   tempoField.addEventListener('change', e => {
     const newTempo = parseFloat(e.target.value);
@@ -63,20 +68,16 @@ function init() {
     }
   });
 
-  const volumeField = document.querySelector('#volume-field');
-
-  const volumeUpButton = document.querySelector('#volume-up-button');
   volumeUpButton.addEventListener('click', e => {
     e.preventDefault();
     volume = Math.min(volume + 0.1, 1.0);
-    volumeField.value = volume;
+    volumeDisplay.innerText = `${Math.round(volume * 100)}%`;
   });
 
-  const volumeDownButton = document.querySelector('#volume-down-button');
   volumeDownButton.addEventListener('click', e => {
     e.preventDefault();
     volume = Math.max(volume - 0.1, 0);
-    volumeField.value = volume;
+    volumeDisplay.innerText = `${Math.round(volume * 100)}%`;
   });
 }
 

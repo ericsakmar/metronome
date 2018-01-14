@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width user-scalable=no">
     <title>Metronome</title>
     <link rel="stylesheet" href="main.css">
-    <script src="http://cwilso.github.io/AudioContext-MonkeyPatch/AudioContextMonkeyPatch.js"></script>
     <script src="metronome.js"></script>
   </head>
   <body>
@@ -32,7 +31,7 @@
         </button>
 
         <div>
-          <input id="tempo" class="field" maxlength="3" />
+          <input id="tempo" class="field value" maxlength="3" />
           <label for="tempo" class="field-label">bpm</label>
         </div>
         
@@ -75,13 +74,7 @@
           </svg>
         </button>
 
-        <input id="volume-field" 
-          type="range"
-          min="0.0"
-          max="1.0"
-          step="0.01"
-          value="1"
-          onInput="volume = event.target.value;" />
+        <div id="volume-display" class="value">100%</div>
 
         <button id="volume-up-button" class="icon-button">
           <svg

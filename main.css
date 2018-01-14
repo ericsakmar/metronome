@@ -37,7 +37,6 @@ body {
 }
 
 .field {
-  font-size: 1.5em;
   width: 2em;
   text-align: center;
   border: 0;
@@ -55,12 +54,17 @@ body {
   background-color: yellow;
 }
 
-.bpm-field {
+.bpm-field, .volume-field {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .icon-button {
   background: none;
   border: 0;
+}
+
+.value {
+  font-size: 1.5em;
 }
