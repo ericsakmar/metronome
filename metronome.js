@@ -66,24 +66,29 @@ function init() {
   tempoField.value = tempo;
 
   tempoField.addEventListener('change', e => {
-    const newTempo = parseFloat(e.target.value);
-    if (!isNaN(newTempo)) {
-      // TODO other checks
-      tempo = newTempo;
-    }
+    setTempo(e.target.value);
   });
 
   tempoUpButton.addEventListener('click', e => {
-    // TODO check range
-    tempo++;
-    tempoField.value = tempo;
+    e.preventDefault();
+    setTempo(tempo + 5);
   });
 
   tempoDownButton.addEventListener('click', e => {
-    // TODO check range
-    tempo--;
-    tempoField.value = tempo;
+    e.preventDefault();
+    setTempo(tempo - 5);
   });
+
+  function setTempo(rawTempo) {
+    let newTempo = parseFloat(rawTempo); 
+    if (!isNaN(newTempo)) {
+      newTempo = newTempo;
+      newTempo = Math.max(20, newTempo);
+      newTempo = Math.min(newTempo, 400);
+      tempo = newTempo;
+    }
+    tempoField.value = Math.round(tempo);
+  }
 
   startButton.addEventListener('click', e => {
     e.preventDefault();
