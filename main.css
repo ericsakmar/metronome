@@ -59,10 +59,10 @@ table {
 
 html {
   height: 100%;
+  font-size: 110%;
 }
 
 body {
-  font-size: 110%;
   font-family: monospace;
   height: 100%;
   background-color: ghostwhite;
