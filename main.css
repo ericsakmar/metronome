@@ -62,6 +62,7 @@ body {
 }
 
 .icon-button:focus {
+  outline: 0;
   background-color: black;
   color: ghostwhite;
 }
