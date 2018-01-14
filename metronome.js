@@ -70,7 +70,7 @@ function init() {
   tempoDownButton.addEventListener('click', e => setTempo(tempo - 5));
 
   function setTempo(rawTempo) {
-    let newTempo = parseFloat(rawTempo); 
+    let newTempo = parseFloat(rawTempo);
     if (!isNaN(newTempo)) {
       newTempo = newTempo;
       newTempo = Math.max(20, newTempo);
@@ -81,20 +81,20 @@ function init() {
   }
 
   startButton.addEventListener('click', e => toggle());
-  stopButton.addEventListener('click', e => toggle()); 
+  stopButton.addEventListener('click', e => toggle());
 
   function toggle() {
     startButton.classList.toggle('hidden');
     stopButton.classList.toggle('hidden');
     start();
-  };
+  }
 
   volumeField.addEventListener('change', e => setVolume(e.target.value));
   volumeUpButton.addEventListener('click', e => setVolume(volume + 5));
   volumeDownButton.addEventListener('click', e => setVolume(volume - 5));
 
   function setVolume(rawVolume) {
-    let newVolume = parseFloat(rawVolume); 
+    let newVolume = parseFloat(rawVolume);
     if (!isNaN(newVolume)) {
       newVolume = newVolume;
       newVolume = Math.max(0, newVolume);
@@ -103,6 +103,10 @@ function init() {
     }
     volumeField.value = Math.round(volume);
   }
+}
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
 }
 
 window.addEventListener('load', init);
