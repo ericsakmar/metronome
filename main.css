@@ -71,7 +71,7 @@ body {
   transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
 }
 
-.icon-button:focus {
+.icon-button:active, .icon-button:focus {
   outline: 0;
   background-color: black;
   color: ghostwhite;
@@ -112,6 +112,11 @@ body {
 #start-button svg {
   position: relative;
   left: 0.35em;
+}
+
+#volume-down-button svg {
+  position: relative;
+  left: 0.3em;
 }
 
 @media all and (min-width: 40em) {
