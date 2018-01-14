@@ -57,10 +57,28 @@ body {
   border: 0;
 }
 
+.big-button {
+  background-color: dodgerblue;
+  color: ghostwhite;
+  padding: 4em;
+  border-radius: 9em;
+  text-align: center;
+}
+
+.big-button svg {
+  width: 5em;
+  height: 5em;
+}
+
 .value {
   font-size: 1.5em;
 }
 
 .hidden {
   display: none;
+}
+
+#start-button svg {
+  position: relative;
+  left: 0.35em;
 }
