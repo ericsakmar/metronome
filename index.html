@@ -68,6 +68,18 @@ table {
   margin: -1px; padding: 0; border: 0; 
 }
 
+/* Remove controls from Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Remove controls from Safari and Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; /* Removes leftover margin */
+}
+
 html {
   height: 100%;
 }
@@ -75,7 +87,7 @@ html {
 body {
   font-size: 110%;
   line-height: 1.35em;
-  font-family: monospace;
+  font-family: "Roboto", sans-serif;
   height: 100%;
   background-color: ghostwhite;
   margin: 0;
@@ -105,8 +117,8 @@ body {
   width: 2em;
   text-align: center;
   border: 0;
-  background-color: transparent;
   font-family: inherit;
+  background-color: transparent;
   padding-bottom: 0;
   display: block;
   transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
@@ -114,6 +126,7 @@ body {
 
 .field-label {
   display: block;
+  opacity: 0.54;
 }
 
 .field:focus {
@@ -139,6 +152,7 @@ body {
   outline: 0;
   background-color: black;
   color: ghostwhite;
+  opacity: 1;
 }
 
 .icon-button::-moz-focus-inner {
@@ -150,6 +164,7 @@ body {
   height: 4em;
   border-radius: 4em;
   margin: 0.2em;
+  opacity: 0.54;
 }
 
 .big-button {
@@ -191,7 +206,7 @@ footer {
 }
 
 .footer-text {
-  flex-basis: 40em;
+  flex-basis: 25em;
   padding: 1em;
 }
 
@@ -225,7 +240,7 @@ footer {
             <span class="visuallyhidden">Decrease BPM by 5</span>
           </button>
           <div>
-            <input id="tempo" class="field value" maxlength="3" />
+            <input id="tempo" type="number" class="field value" maxlength="3" />
             <label for="tempo" class="field-label">bpm</label>
           </div>
           <button id="tempo-up-button" class="icon-button little-button">
@@ -306,7 +321,7 @@ footer {
             <span class="visuallyhidden">Decrease volume by 5%</span>
           </button>
           <div>
-            <input id="volume" class="field value" maxlength="3" />
+            <input id="volume" type="number" class="field value" maxlength="3" />
             <label for="volume" class="field-label">vol</label>
           </div>
           <button id="volume-up-button" class="icon-button little-button">
