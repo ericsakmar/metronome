@@ -393,7 +393,14 @@ footer {
 
         window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
-        if (window.AudioContext) {
+        var arrowFunctions = true;
+        try {
+          eval("var bar = (x) => x+1");
+        } catch (e) {
+          arrowFunctions = false;
+        }
+
+        if (window.AudioContext && arrowFunctions) {
           document.querySelector(".browser-warning").classList.toggle('hidden');
           var controls = document.querySelectorAll(".control-group");
           for (var i = 0, control; control = controls[i]; i++) {
