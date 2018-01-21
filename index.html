@@ -8,9 +8,186 @@
     <link rel="icon" sizes="192x192" href="icons/icon.png">
     <link rel="apple-touch-icon" href="icons/icon-512-square.png">
     <title>Metronome</title>
-    <link rel="stylesheet" href="main.css">
     <script src="metronome.js"></script>
     <meta name="Description" content="Ultimate free online metronome.">
+    <style>
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.visuallyhidden { 
+  position: absolute; 
+  overflow: hidden; 
+  clip: rect(0 0 0 0); 
+  height: 1px; width: 1px; 
+  margin: -1px; padding: 0; border: 0; 
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-size: 110%;
+  font-family: monospace;
+  height: 100%;
+  background-color: ghostwhite;
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.metronome {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.control-group {
+  margin: 1em;
+}
+
+.field {
+  width: 2em;
+  text-align: center;
+  border: 0;
+  background-color: transparent;
+  font-family: inherit;
+  padding-bottom: 0;
+  display: block;
+  transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+}
+
+.field-label {
+  display: block;
+}
+
+.field:focus {
+  background-color: black;
+  color: ghostwhite;
+}
+
+.bpm-field,
+.volume-field {
+  width: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-button {
+  background: none;
+  border: 0;
+  transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+}
+
+.icon-button:active, .icon-button:focus {
+  outline: 0;
+  background-color: black;
+  color: ghostwhite;
+}
+
+.icon-button::-moz-focus-inner {
+  border: 0;
+}
+
+.little-button {
+  width: 4em;
+  height: 4em;
+  border-radius: 4em;
+  margin: 0.2em;
+}
+
+.big-button {
+  background-color: dodgerblue;
+  color: ghostwhite;
+  padding: 4em;
+  border-radius: 9em;
+  text-align: center;
+}
+
+.big-button svg {
+  width: 5em;
+  height: 5em;
+}
+
+.value {
+  font-size: 1.5em;
+}
+
+.hidden {
+  display: none;
+}
+
+#start-button svg {
+  position: relative;
+  left: 0.35em;
+}
+
+#volume-down-button svg {
+  position: relative;
+  left: 0.3em;
+}
+
+@media all and (min-width: 40em) {
+  .metronome {
+    flex-direction: row;
+  }
+}
+    </style>
   </head>
   <body>
     <div class="main">
