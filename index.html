@@ -74,6 +74,7 @@ html {
 
 body {
   font-size: 110%;
+  line-height: 1.35em;
   font-family: monospace;
   height: 100%;
   background-color: ghostwhite;
@@ -179,6 +180,21 @@ body {
 #volume-down-button svg {
   position: relative;
   left: 0.3em;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  opacity: 0.54;
+}
+
+.footer-text {
+  flex-basis: 40em;
+  padding: 1em;
 }
 
 @media all and (min-width: 40em) {
@@ -317,6 +333,13 @@ body {
 
       </div>
     </div>
+    <footer>
+      <p class="footer-text">
+        Created by <a href="https://github.com/ericsakmar/metronome">Eric Sakmar</a>. 
+        &ldquo;Rock-solid timing&rdquo; code is based on <a href="https://github.com/cwilso/metronome">this example</a>,
+        and the icons are by <a href="https://feathericons.com/">Feather</a>.
+      </p>
+    </footer>
     <script src="metronome.js" async></script>
   </body>
 </html>
