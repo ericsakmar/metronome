@@ -1,4 +1,4 @@
-var version = 'v1.0.1';
+var version = 'v1.0.2';
 var offlineFundamentals = ['main.css', 'metronome.js', 'metronomeworker.js'];
 
 self.addEventListener('install', function(event) {
