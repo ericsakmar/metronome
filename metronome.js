@@ -41,7 +41,8 @@ function start() {
 }
 
 function init() {
-  window.AudioContext = window.AudioContext || window.webkitAudioContext;
+
+  
   audioContext = new AudioContext();
   timerWorker = new Worker('metronomeworker.js');
 

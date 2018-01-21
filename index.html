@@ -119,6 +119,11 @@ body {
   justify-content: center;
 }
 
+.browser-warning {
+  flex-basis: 30em;
+  color: tomato;
+}
+
 .control-group {
   margin: 1em;
 }
@@ -241,7 +246,13 @@ footer {
     <div class="main">
       <div class="metronome">
 
-        <div class="control-group bpm-field">
+        <div class="browser-warning">
+          <p class="browser-warning__js">This metronome requires JavaScript.</p>
+          <p class="browser-warning__features hidden">This browser does not support all
+          of the features that are needed to run the metronome. Please try another one.</p>
+        </div>
+
+        <div class="control-group bpm-field hidden">
           <button id="tempo-down-button" class="icon-button little-button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -283,7 +294,7 @@ footer {
           </button>
         </div>
 
-        <div class="control-group">
+        <div class="control-group hidden">
           <button id="start-button" class="icon-button big-button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -321,7 +332,7 @@ footer {
           </button>
         </div>
 
-        <div class="control-group volume-field">
+        <div class="control-group volume-field hidden">
           <button id="volume-down-button" class="icon-button little-button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -374,6 +385,26 @@ footer {
         </p>
       </footer>
     </div>
+    <script>
+      // intentionally using older js stuff here
+      window.addEventListener('load', function() {
+        // if we're here, that means we can hide this warning
+        document.querySelector(".browser-warning__js").classList.toggle('hidden');
+
+        window.AudioContext = window.AudioContext || window.webkitAudioContext;
+
+        if (window.AudioContext) {
+          document.querySelector(".browser-warning").classList.toggle('hidden');
+          var controls = document.querySelectorAll(".control-group");
+          for (var i = 0, control; control = controls[i]; i++) {
+            control.classList.toggle('hidden');
+          }
+        }
+        else {
+          document.querySelector(".browser-warning__features").classList.toggle('hidden');
+        }
+      });
+    </script>
     <script src="metronome.js" async></script>
   </body>
 </html>
