@@ -83,17 +83,18 @@ body {
 
 .main {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   height: 100%;
 }
 
 .metronome {
+  flex-grow: 1;
   padding: 1em;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
+  justify-content: center;
 }
 
 .control-group {
@@ -183,12 +184,9 @@ body {
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
   text-align: center;
   display: flex;
   justify-content: center;
-  width: 100%;
   opacity: 0.54;
 }
 
@@ -332,14 +330,15 @@ footer {
         </div>
 
       </div>
+
+      <footer>
+        <p class="footer-text">
+          Created by <a href="https://github.com/ericsakmar/metronome">Eric Sakmar</a>. 
+          &ldquo;Rock-solid timing&rdquo; code is based on <a href="https://github.com/cwilso/metronome">this example</a>,
+          and the icons are by <a href="https://feathericons.com/">Feather</a>.
+        </p>
+      </footer>
     </div>
-    <footer>
-      <p class="footer-text">
-        Created by <a href="https://github.com/ericsakmar/metronome">Eric Sakmar</a>. 
-        &ldquo;Rock-solid timing&rdquo; code is based on <a href="https://github.com/cwilso/metronome">this example</a>,
-        and the icons are by <a href="https://feathericons.com/">Feather</a>.
-      </p>
-    </footer>
     <script src="metronome.js" async></script>
   </body>
 </html>
