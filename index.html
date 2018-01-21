@@ -218,6 +218,8 @@ footer {
 .footer-text {
   flex-basis: 25em;
   padding: 1em;
+  font-size: 0.75em;
+  line-height: 1.2em;
 }
 
 @media all and (min-width: 40em) {
@@ -225,6 +227,14 @@ footer {
     flex-direction: row;
   }
 }
+
+@media all and (min-width: 40em) and (min-height: 25em) {
+  .footer-text {
+    font-size: inherit;
+    line-height: inherit;
+  }
+}
+
     </style>
   </head>
   <body>
