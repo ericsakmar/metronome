@@ -23,32 +23,32 @@
     <meta property="og:type" content="website" />
 
     <style>
-      /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+      /* http://meyerweb.com/eric/tools/css/reset/
+         v2.0 | 20110126
+         License: none (public domain)
+      */
 
       /* prettier-ignore */
       html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
+      h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+      a, abbr, acronym, address, big, cite, code,
+      del, dfn, em, img, ins, kbd, q, s, samp,
+      small, strike, strong, sub, sup, tt, var,
+      b, u, i, center,
+      dl, dt, dd, ol, ul, li,
+      fieldset, form, label, legend,
+      table, caption, tbody, tfoot, thead, tr, th, td,
+      article, aside, canvas, details, embed,
+      figure, figcaption, footer, header, hgroup,
+      menu, nav, output, ruby, section, summary,
+      time, mark, audio, video {
+      	margin: 0;
+      	padding: 0;
+      	border: 0;
+      	font-size: 100%;
+      	font: inherit;
+      	vertical-align: baseline;
+      }
       /* HTML5 display-role reset for older browsers */
       article,
       aside,
@@ -109,6 +109,16 @@ time, mark, audio, video {
         margin: 0; /* Removes leftover margin */
       }
 
+      :root {
+        --black: #282c34;
+        --blue: #61afef;
+        --gray: #abb2bf;
+        --white: #fff;
+        --red: #e06c75;
+        --green: #9ac379;
+        --yellow: #e5c07b;
+      }
+
       html {
         height: 100%;
       }
@@ -118,8 +128,13 @@ time, mark, audio, video {
         line-height: 1.35em;
         font-family: 'Roboto', sans-serif;
         height: 100%;
-        background-color: ghostwhite;
+        background-color: var(--black);
+        color: var(--gray);
         margin: 0;
+      }
+
+      a {
+        color: var(--blue);
       }
 
       .main {
@@ -140,7 +155,7 @@ time, mark, audio, video {
 
       .browser-warning {
         flex-basis: 30em;
-        color: tomato;
+        color: var(--red);
       }
 
       .control-group {
@@ -156,6 +171,7 @@ time, mark, audio, video {
         padding-bottom: 0;
         display: block;
         transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+        color: var(--white);
       }
 
       .field-label {
@@ -164,8 +180,8 @@ time, mark, audio, video {
       }
 
       .field:focus {
-        background-color: black;
-        color: ghostwhite;
+        background-color: var(--yellow);
+        color: var(--black);
       }
 
       .bpm-field,
@@ -180,13 +196,14 @@ time, mark, audio, video {
         background: none;
         border: 0;
         transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+        color: var(--gray);
       }
 
       .icon-button:active,
       .icon-button:focus {
         outline: 0;
-        background-color: black;
-        color: ghostwhite;
+        background-color: var(--green);
+        color: var(--white);
         opacity: 1;
       }
 
@@ -203,8 +220,8 @@ time, mark, audio, video {
       }
 
       .big-button {
-        background-color: dodgerblue;
-        color: ghostwhite;
+        background-color: var(--blue);
+        color: var(--white);
         padding: 4em;
         border-radius: 9em;
         text-align: center;
@@ -241,7 +258,6 @@ time, mark, audio, video {
       }
 
       .footer-text {
-        flex-basis: 25em;
         padding: 1em;
         font-size: 0.75em;
         line-height: 1.2em;

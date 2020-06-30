@@ -1,7 +1,7 @@
 var audioContext = null;
 var isPlaying = false;
 var tempo = 120.0;
-var volume = 100;
+var volume = 20;
 var nextNoteTime = 0.0;
 var timerWorker = null;
 
@@ -41,8 +41,6 @@ function start() {
 }
 
 function init() {
-
-  
   audioContext = new AudioContext();
   timerWorker = new Worker('metronomeworker.js');
 
