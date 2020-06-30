@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#1E90FF">
-    <link rel="icon" sizes="192x192" href="icons/icon.png">
-    <link rel="apple-touch-icon" href="icons/icon-512-square.png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#1E90FF" />
+    <link rel="icon" sizes="192x192" href="icons/icon.png" />
+    <link rel="apple-touch-icon" href="icons/icon-512-square.png" />
     <title>Metronome</title>
-    <meta name="Description" content="Ultimate free online metronome.">
+    <meta name="Description" content="Ultimate free online metronome." />
 
-    <meta property="og:title" content="Metronome">
-    <meta property="og:description" content="Ultimate free online metronome.">
-    <meta property="og:image" content="https://ericsakmar.github.io/metronome/icons/social.png">
-    <meta property="og:url" content="https://ericsakmar.github.io/metronome">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="og:site_name" content="Metronome">
-    <meta name="twitter:image:alt" content="Metronome Screenshot">
-    <meta property="og:type" content="website">
+    <meta property="og:title" content="Metronome" />
+    <meta property="og:description" content="Ultimate free online metronome." />
+    <meta
+      property="og:image"
+      content="https://ericsakmar.github.io/metronome/icons/social.png"
+    />
+    <meta property="og:url" content="https://ericsakmar.github.io/metronome" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:site_name" content="Metronome" />
+    <meta name="twitter:image:alt" content="Metronome Screenshot" />
+    <meta property="og:type" content="website" />
 
     <style>
-
-/* http://meyerweb.com/eric/tools/css/reset/ 
+      /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
+      /* prettier-ignore */
+      html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -46,210 +49,227 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+      /* HTML5 display-role reset for older browsers */
+      article,
+      aside,
+      details,
+      figcaption,
+      figure,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      section {
+        display: block;
+      }
+      body {
+        line-height: 1;
+      }
+      ol,
+      ul {
+        list-style: none;
+      }
+      blockquote,
+      q {
+        quotes: none;
+      }
+      blockquote:before,
+      blockquote:after,
+      q:before,
+      q:after {
+        content: '';
+        content: none;
+      }
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
 
-.visuallyhidden { 
-  position: absolute; 
-  overflow: hidden; 
-  clip: rect(0 0 0 0); 
-  height: 1px; width: 1px; 
-  margin: -1px; padding: 0; border: 0; 
-}
+      .visuallyhidden {
+        position: absolute;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+      }
 
-/* Remove controls from Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
+      /* Remove controls from Firefox */
+      input[type='number'] {
+        -moz-appearance: textfield;
+      }
 
-/* Remove controls from Safari and Chrome */
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0; /* Removes leftover margin */
-}
+      /* Remove controls from Safari and Chrome */
+      input[type='number']::-webkit-inner-spin-button,
+      input[type='number']::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0; /* Removes leftover margin */
+      }
 
-html {
-  height: 100%;
-}
+      html {
+        height: 100%;
+      }
 
-body {
-  font-size: 110%;
-  line-height: 1.35em;
-  font-family: "Roboto", sans-serif;
-  height: 100%;
-  background-color: ghostwhite;
-  margin: 0;
-}
+      body {
+        font-size: 110%;
+        line-height: 1.35em;
+        font-family: 'Roboto', sans-serif;
+        height: 100%;
+        background-color: ghostwhite;
+        margin: 0;
+      }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
+      .main {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
 
-.metronome {
-  flex-grow: 1;
-  padding: 1em;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-}
+      .metronome {
+        flex-grow: 1;
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+      }
 
-.browser-warning {
-  flex-basis: 30em;
-  color: tomato;
-}
+      .browser-warning {
+        flex-basis: 30em;
+        color: tomato;
+      }
 
-.control-group {
-  margin: 1em;
-}
+      .control-group {
+        margin: 1em;
+      }
 
-.field {
-  width: 2em;
-  text-align: center;
-  border: 0;
-  font-family: inherit;
-  background-color: transparent;
-  padding-bottom: 0;
-  display: block;
-  transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
-}
+      .field {
+        width: 2em;
+        text-align: center;
+        border: 0;
+        font-family: inherit;
+        background-color: transparent;
+        padding-bottom: 0;
+        display: block;
+        transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+      }
 
-.field-label {
-  display: block;
-  opacity: 0.54;
-}
+      .field-label {
+        display: block;
+        opacity: 0.54;
+      }
 
-.field:focus {
-  background-color: black;
-  color: ghostwhite;
-}
+      .field:focus {
+        background-color: black;
+        color: ghostwhite;
+      }
 
-.bpm-field,
-.volume-field {
-  width: 10em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      .bpm-field,
+      .volume-field {
+        width: 10em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-.icon-button {
-  background: none;
-  border: 0;
-  transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
-}
+      .icon-button {
+        background: none;
+        border: 0;
+        transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+      }
 
-.icon-button:active, .icon-button:focus {
-  outline: 0;
-  background-color: black;
-  color: ghostwhite;
-  opacity: 1;
-}
+      .icon-button:active,
+      .icon-button:focus {
+        outline: 0;
+        background-color: black;
+        color: ghostwhite;
+        opacity: 1;
+      }
 
-.icon-button::-moz-focus-inner {
-  border: 0;
-}
+      .icon-button::-moz-focus-inner {
+        border: 0;
+      }
 
-.little-button {
-  width: 4em;
-  height: 4em;
-  border-radius: 4em;
-  margin: 0.2em;
-  opacity: 0.54;
-}
+      .little-button {
+        width: 4em;
+        height: 4em;
+        border-radius: 4em;
+        margin: 0.2em;
+        opacity: 0.54;
+      }
 
-.big-button {
-  background-color: dodgerblue;
-  color: ghostwhite;
-  padding: 4em;
-  border-radius: 9em;
-  text-align: center;
-}
+      .big-button {
+        background-color: dodgerblue;
+        color: ghostwhite;
+        padding: 4em;
+        border-radius: 9em;
+        text-align: center;
+      }
 
-.big-button svg {
-  width: 5em;
-  height: 5em;
-}
+      .big-button svg {
+        width: 5em;
+        height: 5em;
+      }
 
-.value {
-  font-size: 1.5em;
-}
+      .value {
+        font-size: 1.5em;
+      }
 
-.hidden {
-  display: none;
-}
+      .hidden {
+        display: none;
+      }
 
-#start-button svg {
-  position: relative;
-  left: 0.35em;
-}
+      #start-button svg {
+        position: relative;
+        left: 0.35em;
+      }
 
-#volume-down-button svg {
-  position: relative;
-  left: 0.3em;
-}
+      #volume-down-button svg {
+        position: relative;
+        left: 0.3em;
+      }
 
-footer {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  opacity: 0.54;
-}
+      footer {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        opacity: 0.54;
+      }
 
-.footer-text {
-  flex-basis: 25em;
-  padding: 1em;
-  font-size: 0.75em;
-  line-height: 1.2em;
-}
+      .footer-text {
+        flex-basis: 25em;
+        padding: 1em;
+        font-size: 0.75em;
+        line-height: 1.2em;
+      }
 
-@media all and (min-width: 40em) {
-  .metronome {
-    flex-direction: row;
-  }
-}
+      @media all and (min-width: 40em) {
+        .metronome {
+          flex-direction: row;
+        }
+      }
 
-@media all and (min-width: 40em) and (min-height: 25em) {
-  .footer-text {
-    font-size: inherit;
-    line-height: inherit;
-  }
-}
-
+      @media all and (min-width: 40em) and (min-height: 25em) {
+        .footer-text {
+          font-size: inherit;
+          line-height: inherit;
+        }
+      }
     </style>
   </head>
   <body>
     <div class="main">
       <div class="metronome">
-
         <div class="browser-warning">
           <p class="browser-warning__js">This metronome requires JavaScript.</p>
-          <p class="browser-warning__features hidden">This browser does not support all
-          of the features that are needed to run the metronome. Please try another one.</p>
+          <p class="browser-warning__features hidden">
+            This browser does not support all of the features that are needed to
+            run the metronome. Please try another one.
+          </p>
         </div>
 
         <div class="control-group bpm-field hidden">
@@ -352,7 +372,12 @@ footer {
             <span class="visuallyhidden">Decrease volume by 5%</span>
           </button>
           <div>
-            <input id="volume" type="number" class="field value" maxlength="3" />
+            <input
+              id="volume"
+              type="number"
+              class="field value"
+              maxlength="3"
+            />
             <label for="volume" class="field-label">vol</label>
           </div>
           <button id="volume-up-button" class="icon-button little-button">
@@ -369,19 +394,22 @@ footer {
               aria-hidden="true"
             >
               <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
-            </svg> 
+              <path
+                d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"
+              />
+            </svg>
             <span class="visuallyhidden">Increase volume by 5%</span>
           </button>
         </div>
-
       </div>
 
       <footer>
         <p class="footer-text">
-          Created by <a href="https://github.com/ericsakmar/metronome">Eric Sakmar</a>. 
-          &ldquo;Rock-solid timing&rdquo; code is based on <a href="https://github.com/cwilso/metronome">this example</a>,
-          and the icons are by <a href="https://feathericons.com/">Feather</a>.
+          Created by
+          <a href="https://github.com/ericsakmar/metronome">Eric Sakmar</a>.
+          &ldquo;Rock-solid timing&rdquo; code is based on
+          <a href="https://github.com/cwilso/metronome">this example</a>, and
+          the icons are by <a href="https://feathericons.com/">Feather</a>.
         </p>
       </footer>
     </div>
@@ -389,26 +417,29 @@ footer {
       // intentionally using older js stuff here
       window.addEventListener('load', function() {
         // if we're here, that means we can hide this warning
-        document.querySelector(".browser-warning__js").classList.toggle('hidden');
+        document
+          .querySelector('.browser-warning__js')
+          .classList.toggle('hidden');
 
         window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
         var arrowFunctions = true;
         try {
-          eval("var bar = (x) => x+1");
+          eval('var bar = (x) => x+1');
         } catch (e) {
           arrowFunctions = false;
         }
 
         if (window.AudioContext && arrowFunctions) {
-          document.querySelector(".browser-warning").classList.toggle('hidden');
-          var controls = document.querySelectorAll(".control-group");
-          for (var i = 0, control; control = controls[i]; i++) {
+          document.querySelector('.browser-warning').classList.toggle('hidden');
+          var controls = document.querySelectorAll('.control-group');
+          for (var i = 0, control; (control = controls[i]); i++) {
             control.classList.toggle('hidden');
           }
-        }
-        else {
-          document.querySelector(".browser-warning__features").classList.toggle('hidden');
+        } else {
+          document
+            .querySelector('.browser-warning__features')
+            .classList.toggle('hidden');
         }
       });
     </script>
